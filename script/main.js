@@ -4,7 +4,13 @@ class Books {
     this.author = author;
   }
 }
+
 let bookdata = [];
+
+function RemoveObject(index) {
+  bookdata.splice(index, 1);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   window.onload = () => {
     if (localStorage) {
@@ -23,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const removebutton = `#removebookbutton${j}`;
       document.querySelector(removebutton).addEventListener('click', () => {
         const prefix = removebutton[17];
-        bookdata.splice(prefix,1);
+        RemoveObject(prefix);
       });
     }
   };
