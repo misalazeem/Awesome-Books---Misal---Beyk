@@ -32,7 +32,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 My Capstone Project <a name="about-project"></a>
+# 📖 Awesome Books <a name="about-project"></a>
 
 This is the Awesome Books Project for Microverse.
 
@@ -202,7 +202,6 @@ If you like this project give it a rating.
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 - I would like to thank Microverse (microverse.org) for providing the resources and the knowledge to work on projects like this.
-
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
