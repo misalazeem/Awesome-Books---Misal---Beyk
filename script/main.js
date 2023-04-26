@@ -1,6 +1,4 @@
 let bookdata = [];
-let booklist = new BooksObject();
-
 function RemoveObject(index) {
   bookdata.splice(index, 1);
 }
@@ -19,6 +17,26 @@ function displaynewbook() {
     const prefix = removebutton[17];
     booklist.removeBook(prefix);
   });
+}
+
+function displayallbooks() {  
+  const removebooksection = document.getElementById('removebookstable');
+  for (let i = 0; i < booklist.booklist.length; i += 1) {
+    let bookhtml;
+    if (i % 2 === 1) {
+      bookhtml = `<tr class="greyrow"><th><p>"${booklist.booklist[i].title}" by "${booklist.booklist[i].author}</p></th><th><form id="removebook${i}"><button class="removebutton" id="removebookbutton${i}" type="button">remove</button></form></th></tr>`;
+    } else {
+      bookhtml = `<tr><th><p>"${booklist.booklist[i].title}" by "${booklist.booklist[i].author}</p></th><th><form id="removebook${i}"><button class="removebutton" id="removebookbutton${i}" type="button">remove</button></form></th></tr>`;
+    }
+    removebooksection.innerHTML += bookhtml;
+  }
+  for (let j = 0; j < booklist.booklist.length; j += 1) {
+    const removebutton = `#removebookbutton${j}`;
+    document.querySelector(removebutton).addEventListener('click', () => {
+      const prefix = removebutton[17];
+      booklist.removeBook(prefix);
+    });
+  }
 }
 
 class BooksObject {
@@ -45,28 +63,15 @@ class BooksObject {
     document.getElementById('authorname').value = '';
   }
 
-  removeBook(index) {
-    this.booklist.splice(index, 1);
+  removeBook(index) {    
     const removebooksection = document.getElementById('removebookstable');
+    this.booklist.splice(index, 1);
     removebooksection.innerHTML = '';
-    for (let i = 0; i < booklist.booklist.length; i += 1) {
-      let bookhtml;
-      if (i % 2 === 1) {
-        bookhtml = `<tr class="greyrow"><th><p>"${booklist.booklist[i].title}" by "${booklist.booklist[i].author}</p></th><th><form id="removebook${i}"><button class="removebutton" id="removebookbutton${i}" type="button">remove</button></form></th></tr>`;
-      } else {
-        bookhtml = `<tr><th><p>"${booklist.booklist[i].title}" by "${booklist.booklist[i].author}</p></th><th><form id="removebook${i}"><button class="removebutton" id="removebookbutton${i}" type="button">remove</button></form></th></tr>`;
-      }
-      removebooksection.innerHTML += bookhtml;
-    }
-    for (let j = 0; j < booklist.booklist.length; j += 1) {
-      const removebutton = `#removebookbutton${j}`;
-      document.querySelector(removebutton).addEventListener('click', () => {
-        const prefix = removebutton[17];
-        booklist.removeBook(prefix);
-      });
-    }
+    displayallbooks();
   }
 }
+
+let booklist = new BooksObject();
 
 document.addEventListener('DOMContentLoaded', () => {
   window.onload = () => {
