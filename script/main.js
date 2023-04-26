@@ -32,24 +32,22 @@ class BooksObject {
   }
 
   displaynewbook() {
-    console.log('here');
-    console.log(this.booklist.length);
     let bookhtml;
     const removebooksection = document.getElementById('removebookstable');
-    if (booklist.booklist.length % 2 === 0) {
+    if (this.booklist.length % 2 === 0) {
       bookhtml = `<tr class="greyrow"><th><p>"${this.booklist[(this.booklist.length) - 1].title}" by "${this.booklist[(this.booklist.length) - 1].author}</p></th><th><form id="removebook${(this.booklist.length) - 1}"><button class="removebutton" id="removebookbutton${(this.booklist.length) - 1}" type="button">remove</button></form></th></tr>`;
     } else {
       bookhtml = `<tr><th><p>"${this.booklist[(this.booklist.length) - 1].title}" by "${this.booklist[(this.booklist.length) - 1].author}</p></th><th><form id="removebook${(this.booklist.length) - 1}"><button class="removebutton" id="removebookbutton${(this.booklist.length) - 1}" type="button">remove</button></form></th></tr>`;
     }
     removebooksection.innerHTML += bookhtml;
-    const removebutton = `#removebookbutton${(this.booklist.booklist.length) - 1}`;
+    const removebutton = `#removebookbutton${(this.booklist.length) - 1}`;
     document.querySelector(removebutton).addEventListener('click', () => {
       const prefix = removebutton[17];
-      this.booklist.removeBook(prefix);
+      this.removeBook(prefix);
     });
   }
 
-  displayallbooks() {  
+  displayallbooks() {
     const removebooksection = document.getElementById('removebookstable');
     for (let i = 0; i < this.booklist.length; i += 1) {
       let bookhtml;
