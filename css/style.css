@@ -1,3 +1,75 @@
 body {
   padding: 0;
 }
+
+.heading {
+  text-align: center;
+}
+
+.addbooksection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+}
+
+.addbookform {
+  width: 50%;
+}
+
+.addbooktextfields {
+  border: 3px solid #000;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+}
+
+.addbutton {
+  padding: 0 8px;
+  background-color: #fff;
+  border: 3px solid #000;
+  box-shadow: 0 5px 5px #000;
+  float: right;
+}
+
+.removebookssection {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  align-items: center;
+}
+
+.bookstable {
+  width: 100%;
+  border: 3px solid #000;
+}
+
+.bookstable tr {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.greyrow {
+  background-color: #d3d3d3;
+}
+
+.bookstable th {
+  width: 50%;
+  float: left;
+}
+
+.bookstable p {
+  text-align: left;
+}
+
+.removebutton {
+  padding: 0 8px;
+  background-color: #fff;
+  border: 3px solid #000;
+  box-shadow: 0 5px 5px #000;
+  float: right;
+}
