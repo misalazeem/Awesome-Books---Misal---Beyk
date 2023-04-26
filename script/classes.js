@@ -5,6 +5,6 @@ class Books {
   }
 }
 
-let foo = 'bar';
+const foo = '';
 
 export { Books, foo };
