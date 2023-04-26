@@ -1,7 +1,6 @@
 import { Books, foo } from './classes.js';
 
 let bookdata = [];
-foo = 'bar1';
 class BooksObject {
   constructor(object = []) {
     this.booklist = object;
