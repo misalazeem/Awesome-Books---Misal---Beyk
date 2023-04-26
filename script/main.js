@@ -24,7 +24,7 @@ class BooksObject {
     document.getElementById('authorname').value = '';
   }
 
-  removeBook(index) {    
+  removeBook(index) {
     const removebooksection = document.getElementById('removebookstable');
     this.booklist.splice(index, 1);
     removebooksection.innerHTML = '';
@@ -68,7 +68,7 @@ class BooksObject {
   }
 }
 
-let booklist = new BooksObject();
+const booklist = new BooksObject();
 
 document.addEventListener('DOMContentLoaded', () => {
   window.onload = () => {
