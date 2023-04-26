@@ -4,4 +4,7 @@ class Books {
     this.author = author;
   }
 }
-export { Books };
+
+const foo = 'bar';
+
+export { Books, foo };
