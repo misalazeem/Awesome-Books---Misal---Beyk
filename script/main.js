@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       booklist.addBook(document.getElementById('titlename').value, document.getElementById('authorname').value);
     }
   });
-  
+
   document.querySelector('#listbutton').addEventListener('click', () => {
     document.querySelector('#removebooks').classList.remove('inactive');
     document.querySelector('#addbooks').classList.add('inactive');
