@@ -1,6 +1,35 @@
 let bookdata = [];
-function RemoveObject(index) {
-  bookdata.splice(index, 1);
+
+class BooksObject {
+  constructor(object = []) {
+    this.booklist = object;
+  }
+
+  loadbooks(bookdatas = []) {
+    for (let i = 0; i < bookdatas.booklist.length; i += 1) {
+      const bookobject1 = new Books();
+      bookobject1.title = bookdatas.booklist[i].title;
+      bookobject1.author = bookdatas.booklist[i].author;
+      this.booklist.push(bookobject1);
+    }
+  }
+
+  addBook(title, author) {
+    const bookobject1 = new Books();
+    bookobject1.author = author;
+    bookobject1.title = title;
+    this.booklist.push(bookobject1);
+    displaynewbook();
+    document.getElementById('titlename').value = '';
+    document.getElementById('authorname').value = '';
+  }
+
+  removeBook(index) {    
+    const removebooksection = document.getElementById('removebookstable');
+    this.booklist.splice(index, 1);
+    removebooksection.innerHTML = '';
+    displayallbooks();
+  }
 }
 
 function displaynewbook() {
@@ -36,38 +65,6 @@ function displayallbooks() {
       const prefix = removebutton[17];
       booklist.removeBook(prefix);
     });
-  }
-}
-
-class BooksObject {
-  constructor(object = []) {
-    this.booklist = object;
-  }
-
-  loadbooks(bookdatas = []) {
-    for (let i = 0; i < bookdatas.booklist.length; i += 1) {
-      const bookobject1 = new Books();
-      bookobject1.title = bookdatas.booklist[i].title;
-      bookobject1.author = bookdatas.booklist[i].author;
-      this.booklist.push(bookobject1);
-    }
-  }
-
-  addBook(title, author) {
-    const bookobject1 = new Books();
-    bookobject1.author = author;
-    bookobject1.title = title;
-    this.booklist.push(bookobject1);
-    displaynewbook();
-    document.getElementById('titlename').value = '';
-    document.getElementById('authorname').value = '';
-  }
-
-  removeBook(index) {    
-    const removebooksection = document.getElementById('removebookstable');
-    this.booklist.splice(index, 1);
-    removebooksection.innerHTML = '';
-    displayallbooks();
   }
 }
 
