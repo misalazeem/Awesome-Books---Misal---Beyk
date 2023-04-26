@@ -1,6 +1,5 @@
 import { Books, foo } from './classes.js';
 
-let bookdata = [];
 class BooksObject {
   constructor(object = []) {
     this.booklist = object;
@@ -61,11 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.onload = () => {
     if (localStorage) {
       const localStorageItem = localStorage.getItem('booklist');
-      bookdata = JSON.parse(localStorageItem);
-      if (bookdata == null) {
-        bookdata = [];
-      }
-      booklist.loadbooks(bookdata);
+      booklist.loadbooks(JSON.parse(localStorageItem));
     }
     const removebooksection = document.getElementById('removebookstable');
     for (let i = 0; i < booklist.booklist.length; i += 1) {
