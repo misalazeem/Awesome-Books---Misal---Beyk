@@ -1,7 +1,7 @@
 import { Books, foo } from './classes.js';
 
 let bookdata = [];
-let bar = foo;
+let foo = '';
 class BooksObject {
   constructor(object = []) {
     this.booklist = object;
@@ -14,7 +14,6 @@ class BooksObject {
       bookobject1.author = bookdatas.booklist[i].author;
       this.booklist.push(bookobject1);
     }
-    bar += 1;
   }
 
   addBook(title, author) {
@@ -30,7 +29,7 @@ class BooksObject {
   removeBook(index) {
     const removebooksection = document.getElementById('removebookstable');
     this.booklist.splice(index, 1);
-    removebooksection.innerHTML = '';
+    removebooksection.innerHTML = foo;
     this.displayallbooks();
   }
 
