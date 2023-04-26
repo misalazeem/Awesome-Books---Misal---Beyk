@@ -14,6 +14,7 @@ class BooksObject {
       bookobject1.author = bookdatas.booklist[i].author;
       this.booklist.push(bookobject1);
     }
+    foo += 1;
   }
 
   addBook(title, author) {
