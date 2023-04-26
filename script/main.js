@@ -1,6 +1,7 @@
 import { Books, foo } from './classes.js';
 
 let bookdata = [];
+let bar = foo;
 class BooksObject {
   constructor(object = []) {
     this.booklist = object;
@@ -13,7 +14,7 @@ class BooksObject {
       bookobject1.author = bookdatas.booklist[i].author;
       this.booklist.push(bookobject1);
     }
-    foo += 1;
+    bar += 1;
   }
 
   addBook(title, author) {
