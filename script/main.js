@@ -1,3 +1,10 @@
+let bookdata = [];
+let booklist = new BooksObject();
+
+function RemoveObject(index) {
+  bookdata.splice(index, 1);
+}
+
 function displaynewbook() {
   let bookhtml;
   const removebooksection = document.getElementById('removebookstable');
@@ -44,7 +51,7 @@ class BooksObject {
     removebooksection.innerHTML = '';
     for (let i = 0; i < booklist.booklist.length; i += 1) {
       let bookhtml;
-      if(i % 2 == 1){
+      if (i % 2 === 1) {
         bookhtml = `<tr class="greyrow"><th><p>"${booklist.booklist[i].title}" by "${booklist.booklist[i].author}</p></th><th><form id="removebook${i}"><button class="removebutton" id="removebookbutton${i}" type="button">remove</button></form></th></tr>`;
       } else {
         bookhtml = `<tr><th><p>"${booklist.booklist[i].title}" by "${booklist.booklist[i].author}</p></th><th><form id="removebook${i}"><button class="removebutton" id="removebookbutton${i}" type="button">remove</button></form></th></tr>`;
@@ -61,12 +68,6 @@ class BooksObject {
   }
 }
 
-let bookdata = [];
-let booklist = new BooksObject();
-function RemoveObject(index) {
-  bookdata.splice(index, 1);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   window.onload = () => {
     if (localStorage) {
@@ -80,10 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const removebooksection = document.getElementById('removebookstable');
     for (let i = 0; i < booklist.booklist.length; i += 1) {
       let bookhtml;
-      if(i % 2 == 1){
+      if (i % 2 === 1) {
         bookhtml = `<tr class="greyrow"><th><p>"${booklist.booklist[i].title}" by "${booklist.booklist[i].author}</p></th><th><form id="removebook${i}"><button class="removebutton" id="removebookbutton${i}" type="button">remove</button></form></th></tr>`;
-      }
-      else {
+      } else {
         bookhtml = `<tr><th><p>"${booklist.booklist[i].title}" by "${booklist.booklist[i].author}</p></th><th><form id="removebook${i}"><button class="removebutton" id="removebookbutton${i}" type="button">remove</button></form></th></tr>`;
       }
       removebooksection.innerHTML += bookhtml;
@@ -102,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.querySelector('#addbookbutton').addEventListener('click', () => {
-    const bookobject = new Books();
     if (document.getElementById('titlename').value !== '' && document.getElementById('authorname').value !== '') {
       booklist.addBook(document.getElementById('titlename').value, document.getElementById('authorname').value);
     }
