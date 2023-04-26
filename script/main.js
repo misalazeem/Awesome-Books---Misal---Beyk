@@ -1,10 +1,9 @@
-function displaynewbook () {
+function displaynewbook() {
   let bookhtml;
   const removebooksection = document.getElementById('removebookstable');
-  if(booklist.booklist.length % 2 == 0){
+  if (booklist.booklist.length % 2 === 0) {
     bookhtml = `<tr class="greyrow"><th><p>"${booklist.booklist[(booklist.booklist.length) - 1].title}" by "${booklist.booklist[(booklist.booklist.length) - 1].author}</p></th><th><form id="removebook${(booklist.booklist.length) - 1}"><button class="removebutton" id="removebookbutton${(booklist.booklist.length) - 1}" type="button">remove</button></form></th></tr>`;
-  }
-  else {
+  } else {
     bookhtml = `<tr><th><p>"${booklist.booklist[(booklist.booklist.length) - 1].title}" by "${booklist.booklist[(booklist.booklist.length) - 1].author}</p></th><th><form id="removebook${(booklist.booklist.length) - 1}"><button class="removebutton" id="removebookbutton${(booklist.booklist.length) - 1}" type="button">remove</button></form></th></tr>`;
   }
   removebooksection.innerHTML += bookhtml;
@@ -13,7 +12,6 @@ function displaynewbook () {
     const prefix = removebutton[17];
     booklist.removeBook(prefix);
   });
-  
 }
 
 class BooksObject {
@@ -42,7 +40,6 @@ class BooksObject {
 
   removeBook(index) {
     this.booklist.splice(index, 1);
-    let bookhtml;
     const removebooksection = document.getElementById('removebookstable');
     removebooksection.innerHTML = '';
     for (let i = 0; i < booklist.booklist.length; i += 1) {
