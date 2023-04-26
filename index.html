@@ -11,17 +11,20 @@
   </head>
 
   <body>
-    <section>
+    <section class="heading">
         <h1>Awesome Books</h1>
     </section>
-    <section id="removebooks">
-        
+    <section class="removebookssection" id="removebooks">
+      <table class="bookstable" id="removebookstable">
+
+      </table>        
     </section>
-    <section id="addbooks">    
-        <form id="addbook">
-            <input id="titlename" type="text" placeholder="Title" required><br><br>
-            <input id="authorname" type="text" placeholder="Author" required><br><br>
-            <button id="addbookbutton" type="submit">Add</button>
+    <section class="addbooksection" id="addbooks">
+      <h2>Add a new book</h2>
+        <form class="addbookform" id="addbook">
+            <input class="addbooktextfields" id="titlename" type="text" placeholder="Title" required><br>
+            <input class="addbooktextfields" id="authorname" type="text" placeholder="Author" required><br>
+            <button class="addbutton" id="addbookbutton" type="button">Add</button>
         </form>
     </section>
   </body>
