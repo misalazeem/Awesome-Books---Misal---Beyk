@@ -90,4 +90,22 @@ document.addEventListener('DOMContentLoaded', () => {
       booklist.addBook(document.getElementById('titlename').value, document.getElementById('authorname').value);
     }
   });
+
+  document.querySelector('#listbutton').addEventListener('click', () => {
+    document.querySelector('#removebooks').classList.remove('inactive');
+    document.querySelector('#addbooks').classList.add('inactive');
+    document.querySelector('#contactsection').classList.add('inactive');
+  });
+
+  document.querySelector('#addnewnavbutton').addEventListener('click', () => {
+    document.querySelector('#removebooks').classList.add('inactive');
+    document.querySelector('#addbooks').classList.remove('inactive');
+    document.querySelector('#contactsection').classList.add('inactive');
+  });
+
+  document.querySelector('#contactbutton').addEventListener('click', () => {
+    document.querySelector('#removebooks').classList.add('inactive');
+    document.querySelector('#addbooks').classList.add('inactive');
+    document.querySelector('#contactsection').classList.remove('inactive');
+  });
 });
